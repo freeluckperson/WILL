@@ -18,8 +18,7 @@ for (var i = 0; i < array.length; i++) {
    }
   }
     return onlyNum;
-};
-
+}
 // No modifiques nada debajo de esta linea //
 
 
