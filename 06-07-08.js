@@ -11,7 +11,10 @@ function crearClasePersona() {
       // Inicializar las propiedades de la persona con los valores recibidos como argumento
 
       // Tu código aca:
-
+     this.nombre = nombre 
+     this.edad = edad
+     this.hobbies = hobbies
+     this.amigos = amigos
     }
 
     addFriend(nombre, edad) {
@@ -20,7 +23,7 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
-
+      this.amigos.push({nombre: nombre, edad: edad})
     }
 
     addHobby(hobby) {
@@ -28,7 +31,7 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
-
+    this.hobbies.push(hobby);
     }
     getFriends() {
       // El método 'getFriends' debe retornar un arreglo con sólo los nombres del arreglo de amigos
@@ -37,8 +40,14 @@ function crearClasePersona() {
       // Suponiendo que la persona tiene estos amigos: [{nombre: 'martin', edad: 31},{nombre: 'toni', edad: 33}]
       // persona.getFriends() debería devolver ['martin', 'toni']
 
-      // Tu código aca:
-
+    //   // Tu código aca:
+    // var arrayNombres = [];
+    // for(var i = 0; i < this.amigos.length; i++){
+    //  arrayNombres.push(this.amigos[i].nombre);
+     var arrayNombres = this.amigos.map(function (elem){
+      return elem.nombre;
+     })
+     return arrayNombres;
     }
 
     getHobbies() {
@@ -46,8 +55,15 @@ function crearClasePersona() {
       // Ej:
       // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
 
-      // Tu código aca:
-
+    //   // Tu código aca:
+    // var losHobbies =[];
+    // for(var i =0; i < this.hobbies.length; i++){
+    //   losHobbies.push(this.hobbies[i]);
+    //  }
+    var losHobbies = this.hobbies.map(function(elemento){
+         return elemento;
+    })
+    return losHobbies;
     }
 
     getPromedioEdad() {
@@ -66,7 +82,11 @@ function crearClasePersona() {
       // persona.getPromedioEdad() debería devolver 29 ya que (33 + 25) / 2 = 29
 
       // Tu código aca:
-
+    var acumulador = 0;
+    for (var i = 0; i < this.amigos.length; i++){
+     acumulador  += this.amigos[i].edad; 
+     }
+       return acumulador/this.amigos.length;
     }
   };
 
